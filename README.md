@@ -2,6 +2,8 @@
 
 Ένα εκπαιδευτικό παιχνίδι τύπου "Τροχός της Τύχης" για την εκμάθηση της ώρας στα Ελληνικά.
 
+🎮 **[Παίξε τώρα!](https://dpantaz.github.io/time-tell-wheel-of-fortune/)**
+
 ![Screenshot](docs/screenshot.png)
 
 ## Πώς παίζεται
