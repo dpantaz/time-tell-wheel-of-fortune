@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Τροχός της Τύχης - Τι Ώρα Είναι;</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen">
+        <div class="setup-container">
+            <h1>🎡 Τροχός της Τύχης</h1>
+            <h2>Τι Ώρα Είναι;</h2>
+            <div class="setup-section">
+                <label>Πόσοι παίκτες;</label>
+                <div class="player-count-buttons">
+                    <button type="button" class="btn btn-count" data-count="2">2</button>
+                    <button type="button" class="btn btn-count" data-count="3">3</button>
+                    <button type="button" class="btn btn-count" data-count="4">4</button>
+                </div>
+            </div>
+            <div id="player-setup" class="player-setup hidden"></div>
+            <button type="button" id="btn-start" class="btn btn-start hidden">Ξεκίνα το Παιχνίδι!</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <div id="scoreboard" class="scoreboard"></div>
+            <div id="turn-indicator" class="turn-indicator"></div>
+        </div>
+        <div class="game-layout">
+            <!-- Left: Wheel -->
+            <div class="wheel-section">
+                <div class="wheel-wrapper">
+                    <div class="wheel-pointer">▼</div>
+                    <canvas id="wheel-canvas" width="400" height="400"></canvas>
+                </div>
+                <button type="button" id="btn-spin" class="btn btn-spin">Γύρισε τον Τροχό!</button>
+                <div id="wheel-result" class="wheel-result hidden"></div>
+            </div>
+            <!-- Right: Clock + Answers -->
+            <div class="clock-section">
+                <div class="clock-container">
+                    <svg id="clock" viewBox="0 0 400 400">
+                        <circle cx="200" cy="200" r="190" class="clock-face"/>
+                        <circle cx="200" cy="200" r="185" class="clock-inner"/>
+                        <g id="hour-markers"></g>
+                        <g id="minute-markers"></g>
+                        <line id="hour-hand" x1="200" y1="200" x2="200" y2="110" class="hand hour"/>
+                        <line id="minute-hand" x1="200" y1="200" x2="200" y2="70" class="hand minute"/>
+                        <circle cx="200" cy="200" r="8" class="center-dot"/>
+                    </svg>
+                </div>
+                <div id="answers-container" class="answers-container hidden">
+                    <p class="question-text">Τι ώρα είναι;</p>
+                    <div id="answers" class="answers"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen hidden">
+        <div class="gameover-container">
+            <h1>🏆 Τέλος Παιχνιδιού!</h1>
+            <div id="final-scores" class="final-scores"></div>
+            <button type="button" id="btn-restart" class="btn btn-start">Νέο Παιχνίδι</button>
+        </div>
+    </div>
+
+    <script src="time-words.js"></script>
+    <script src="clock.js"></script>
+    <script src="wheel.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
